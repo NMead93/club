@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from '../admin.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  providers: [AdminService]
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  players = this.adminService.players;
 
-  constructor(private adminService: AdminService, private router: Router) { }
+  positionSearch: string = "all";
+
+  constructor() { }
 
   ngOnInit() {
   }
 
-  goToDetailPage(clickedPlayerId) {
-    this.router.navigate(['players', clickedPlayerId]);
+
+  search(criteria: string) {
+    this.positionSearch = criteria;
   }
+
 
 }
