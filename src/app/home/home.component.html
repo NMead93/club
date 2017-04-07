@@ -1,3 +1,18 @@
-<p>
-  home works!
-</p>
+<div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center text-primary">Seattle Mariners</h1>
+                        <p class="text-center">My Oh My</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let player of players | async" (click)="goToDetailPage(player.$key)">
+                      <img src={{player.imgUrl}} class="img-quadrata center-block">
+                      <h3 class="text-center">{{player.name}}
+                      <br/>
+                      <small> {{player.position}}</small></h3>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -28,4 +28,9 @@ export class AdminService {
     })
   }
 
+  deletePlayer(player) {
+    var playerEntryInFirebase = this.getPlayerById(player.$key);
+    playerEntryInFirebase.remove();
+  }
+
 }

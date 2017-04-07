@@ -1,3 +1,77 @@
-<p>
-  player-detail works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="fb-profile">
+      <img align="left" class="fb-image-lg" src="https://s3-ap-southeast-1.amazonaws.com/reprime/cards/card-mlb-seattle-mariners.png" alt="Profile image example"/>
+      <img align="left" class="fb-image-profile thumbnail" src="{{(player | async)?.imgUrl}}" alt="Profile image example"/>
+      <div class="fb-profile-text">
+        <h1>{{(player | async)?.name}}</h1>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-sm-8">
+
+    <div data-spy="scroll" class="tabbable-panel">
+      <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+          <li class="active">
+            <a href="#tab_default_1" data-toggle="tab">
+              About Player </a>
+            </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab_default_1">
+
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.
+                  </p>
+                  <h4>Education </h4>
+                  <p>Lorem Ipsum</p>
+                  <h4>Position</h4>
+                  <p>{{(player | async)?.position}}</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-4">
+   <div class="panel panel-default">
+    <div class="menu_title">
+       2017 Stats
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-12">
+                 <div class="form-group">
+                     <label for="email">Batting Average:</label>
+                      <p>.{{(player | async)?.stats[0]}}</p>
+                 </div>
+                  <div class="form-group">
+                      <label for="email">Homeruns:</label>
+                      <p> {{(player | async)?.stats[1]}}</p>
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Stolen Bases</label>
+                      <p> Lorem Ipsum</p>
+                  </div>
+                    <div class="form-group">
+                      <label for="email">RBI</label>
+                      <p> Lorem ipsum</p>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">OBP</label>
+                      <p> Lorem Ipsum</p>
+                    </div>
+
+            </div>
+        </div>
+      </div>
+
+
+
+      </div>

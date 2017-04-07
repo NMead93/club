@@ -28,7 +28,7 @@
               <tr *ngFor="let player of players | async">
                 <td align="center">
                   <a class="btn btn-default" (click)="selectPlayer(player)"><em class="fa fa-pencil">update</em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash">delete</em></a>
+                  <a class="btn btn-danger" (click)="deletePlayer(player)"><em class="fa fa-trash">delete</em></a>
                 </td>
                 <td class="hidden-xs">{{player.position}}</td>
                 <td>{{player.name}}</td>

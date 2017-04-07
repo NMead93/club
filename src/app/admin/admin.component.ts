@@ -20,4 +20,8 @@ export class AdminComponent implements OnInit {
     this.selectedPlayer = selectedPlayer
   }
 
+  deletePlayer(player) {
+    this.adminService.deletePlayer(player)
+  }
+
 }
