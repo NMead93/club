@@ -18,7 +18,7 @@ export class AddPlayerComponent implements OnInit {
   addPlayer(name, url, position, country, average, hr) {
     let stats: number[] = [average, hr];
     var newPlayer: Player = new Player(url, name, position, country, stats);
-    this.adminService.
+    this.adminService.addPlayer(newPlayer);
   }
 
 }

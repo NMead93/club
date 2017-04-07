@@ -7,10 +7,10 @@
         <div class="panel-heading">
           <div class="row">
             <div class="col col-xs-6">
-              <h3 class="panel-title">Panel Heading</h3>
+              <h3 class="panel-title">Roster List</h3>
             </div>
             <div class="col col-xs-6 text-right">
-              <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
+              <button type="button" class="btn btn-sm btn-primary btn-create">New Player</button>
             </div>
           </div>
         </div>
@@ -19,20 +19,20 @@
             <thead>
               <tr>
                 <th><em class="fa fa-cog"></em></th>
-                <th class="hidden-xs">ID</th>
+                <th class="hidden-xs">Position</th>
                 <th>Name</th>
-                <th>Email</th>
+                <th>Country</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let player of players | async">
                 <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                  <a class="btn btn-default"><em class="fa fa-pencil">update</em></a>
+                  <a class="btn btn-danger"><em class="fa fa-trash">delete</em></a>
                 </td>
-                <td class="hidden-xs">1</td>
-                <td>John Doe</td>
-                <td>johndoe@example.com</td>
+                <td class="hidden-xs">{{player.position}}</td>
+                <td>{{player.name}}</td>
+                <td>{{player.country}}</td>
               </tr>
             </tbody>
           </table>
