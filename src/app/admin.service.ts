@@ -10,8 +10,22 @@ export class AdminService {
     this.players = angularFire.database.list('players');
   }
 
+  getPlayerById(playerId: string) {
+    return this.angularFire.database.object('players/' + playerId);
+  }
+
   addPlayer(newPlayer: Player) {
     this.players.push(newPlayer);
+  }
+
+  updatePlayer(currentPlayer) {
+    var playerEntryInFirebase = this.getPlayerById(currentPlayer.$key);
+    playerEntryInFirebase.update({
+      name: currentPlayer.name,
+      imgUrl: currentPlayer.imgUrl,
+      position: currentPlayer.position,
+      country: currentPlayer.country
+    })
   }
 
 }

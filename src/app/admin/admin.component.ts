@@ -8,12 +8,16 @@ import { AdminService } from '../admin.service';
   providers: [AdminService]
 })
 export class AdminComponent implements OnInit {
-
+  selectedPlayer = null;
   players = this.adminService.players;
 
   constructor(private adminService: AdminService) { }
 
   ngOnInit() {
+  }
+
+  selectPlayer(selectedPlayer) {
+    this.selectedPlayer = selectedPlayer
   }
 
 }
