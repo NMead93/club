@@ -1,38 +1,59 @@
 <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="well well-sm">
-          <form class="form-horizontal" action="" method="post">
+          <form class="form-horizontal">
           <fieldset>
-            <legend class="text-center">Contact us</legend>
+            <legend class="text-center">New Player Info</legend>
 
             <!-- Name input-->
             <div class="form-group">
               <label class="col-md-3 control-label" for="name">Name</label>
               <div class="col-md-9">
-                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                <input #newName id="name" name="name" type="text" placeholder="Name" class="form-control">
               </div>
             </div>
 
             <!-- Email input-->
             <div class="form-group">
-              <label class="col-md-3 control-label" for="email">Your E-mail</label>
+              <label class="col-md-3 control-label" for="url">Img Url</label>
               <div class="col-md-9">
-                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                <input #newUrl id="url" name="url" type="text" placeholder="url" class="form-control">
               </div>
             </div>
 
             <!-- Message body -->
             <div class="form-group">
-              <label class="col-md-3 control-label" for="message">Your message</label>
+              <label class="col-md-3 control-label" for="position">Position</label>
               <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+                <input #newPosition class="form-control" id="position" name="position" placeholder="Player Position">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="country">Country of Origin</label>
+              <div class="col-md-9">
+                <input #newCountry id="country" name="country" type="text" placeholder="Country" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="average">2017 Batting Average</label>
+              <div class="col-md-9">
+                <input #newAverage id="average" name="average" type="number" placeholder="Batting Average" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="homerun">2017 Home Runs</label>
+              <div class="col-md-9">
+                <input #newHR id="homerun" name="homerun" type="number" placeholder="Home Runs" class="form-control">
               </div>
             </div>
 
             <!-- Form actions -->
             <div class="form-group">
               <div class="col-md-12 text-right">
-                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                <button (click)="addPlayer(newName.value, newUrl.value, newPosition.value, newCountry.value, newAverage.value, newHR.value)" class="btn btn-primary btn-lg">Add Player</button>
               </div>
             </div>
           </fieldset>
